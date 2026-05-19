@@ -59,11 +59,20 @@
         <span class="leaf leaf-three"></span>
 
         <div class="portrait-wrap">
-          <img
-            class="portrait"
-            src="maminelly.webp"
-            alt="Retrato de la Sra. Nelly Ribera Robles"
+          <button
+            class="portrait-button"
+            type="button"
+            data-memory-trigger
+            aria-label="Presiona la imagen para recordar una frase de Mamita Nelly"
           >
+            <img
+              class="portrait"
+              src="maminelly.webp"
+              alt="Retrato de la Sra. Nelly Ribera Robles"
+            >
+            <span class="portrait-hint">Presiona la imagen</span>
+          </button>
+          <p class="memory-phrase" data-memory-phrase aria-live="polite"></p>
         </div>
 
         <article class="card">
@@ -143,6 +152,17 @@
       const modal = document.querySelector(".notice-modal");
       const openModal = document.querySelector("[data-open-modal]");
       const closeButtons = document.querySelectorAll("[data-close-modal]");
+      const memoryTrigger = document.querySelector("[data-memory-trigger]");
+      const memoryPhrase = document.querySelector("[data-memory-phrase]");
+      const memoryPhrases = [
+        "Entre hermanitos no se pelea",
+        "Un pedasingui",
+        "Ja a",
+        "Chichi, Vicky, Chela, Negra",
+        "Esa cunumi",
+      ];
+      let memoryPhraseIndex = 0;
+      let memoryPhraseTimer;
 
       openModal.addEventListener("click", () => {
         modal.showModal();
@@ -158,6 +178,22 @@
         if (event.target === modal) {
           modal.close();
         }
+      });
+
+      memoryTrigger.addEventListener("click", () => {
+        memoryPhrase.textContent = memoryPhrases[memoryPhraseIndex];
+        memoryPhrase.classList.remove("is-visible");
+        window.clearTimeout(memoryPhraseTimer);
+
+        requestAnimationFrame(() => {
+          memoryPhrase.classList.add("is-visible");
+        });
+
+        memoryPhraseTimer = window.setTimeout(() => {
+          memoryPhrase.classList.remove("is-visible");
+        }, 2300);
+
+        memoryPhraseIndex = (memoryPhraseIndex + 1) % memoryPhrases.length;
       });
 
       window.addEventListener("load", () => {
