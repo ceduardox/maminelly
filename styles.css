@@ -6,6 +6,9 @@
   --paper: rgba(255, 255, 255, 0.78);
   --line: rgba(185, 131, 34, 0.34);
   --shadow: 0 28px 90px rgba(7, 42, 88, 0.2);
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-accent: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -21,7 +24,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   background:
     radial-gradient(circle at 10% 6%, rgba(194, 225, 243, 0.9), transparent 22rem),
     radial-gradient(circle at 88% 12%, rgba(248, 223, 167, 0.48), transparent 24rem),
@@ -101,10 +104,10 @@ body {
 .eyebrow {
   margin: 0;
   color: var(--gold);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -141,9 +144,10 @@ body {
 h1 {
   margin: 0;
   color: var(--ink);
+  font-family: var(--font-display);
   font-size: clamp(3.4rem, 7vw, 6.8rem);
-  font-weight: 700;
-  line-height: 0.9;
+  font-weight: 800;
+  line-height: 0.88;
   letter-spacing: 0;
   text-align: center;
 }
@@ -152,15 +156,17 @@ h1 span {
   display: block;
   color: var(--blue);
   font-size: clamp(2.55rem, 5.6vw, 5.2rem);
+  font-weight: 700;
 }
 
 .message {
   max-width: 470px;
   margin: 22px auto 0;
   color: #173c69;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(1rem, 1.7vw, 1.16rem);
-  line-height: 1.62;
+  font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.55vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.68;
   text-align: center;
 }
 
@@ -184,7 +190,7 @@ h1 span {
   display: block;
   margin-bottom: 6px;
   color: var(--gold);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -194,7 +200,7 @@ h1 span {
 .event-box strong {
   display: block;
   color: var(--blue);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
   line-height: 1.1;
 }
@@ -213,7 +219,7 @@ h1 span {
   color: #ffffff;
   background: linear-gradient(135deg, #0b66bd, #16864e);
   box-shadow: 0 18px 42px rgba(11, 92, 168, 0.28);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 850;
   text-decoration: none;
@@ -254,8 +260,9 @@ h1 span {
 .hosts h2 {
   margin: 0 0 12px;
   color: var(--green);
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  font-weight: 700;
+  font-family: var(--font-accent);
+  font-size: clamp(1.65rem, 2.6vw, 2rem);
+  font-weight: 600;
   text-align: center;
 }
 
@@ -271,9 +278,10 @@ h1 span {
   min-height: 28px;
   padding: 5px 0 5px 26px;
   color: #0d2f61;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.35;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.38;
 }
 
 .hosts li::before {
@@ -289,14 +297,18 @@ h1 span {
 
 .hosts span {
   color: var(--green);
+  font-family: var(--font-accent);
+  font-size: 1.08em;
   font-style: italic;
+  font-weight: 600;
 }
 
 .place {
   margin: 22px 0 0;
   color: var(--ink);
-  font-size: 1.38rem;
-  font-weight: 700;
+  font-family: var(--font-accent);
+  font-size: 1.7rem;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -358,7 +370,7 @@ h1 span {
 .modal-eyebrow {
   margin: 0 0 10px;
   color: var(--gold);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -368,7 +380,9 @@ h1 span {
 .modal-card h2 {
   margin: 0;
   color: var(--blue);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 7vw, 2.55rem);
+  font-weight: 700;
   line-height: 1.05;
 }
 
@@ -376,8 +390,9 @@ h1 span {
   max-width: 330px;
   margin: 16px auto 0;
   color: #173c69;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
+  font-weight: 500;
   line-height: 1.55;
 }
 
@@ -391,7 +406,7 @@ h1 span {
   color: #ffffff;
   background: linear-gradient(135deg, #0b66bd, #16864e);
   box-shadow: 0 14px 34px rgba(11, 92, 168, 0.24);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.98rem;
   font-weight: 800;
 }
