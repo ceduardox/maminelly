@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Libre+Baskerville:wght@700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
       rel="stylesheet"
     >
     <link rel="preload" href="maminelly.webp" as="image">
@@ -67,7 +67,6 @@
 
         <article class="card">
           <p class="eyebrow">Noche para recordar</p>
-          <div class="cross" aria-hidden="true"></div>
 
           <h1>
             Mamita
@@ -207,15 +206,6 @@
             delay: anime.stagger(55),
             duration: 520,
           }, "-=250");
-
-        anime({
-          targets: ".cross",
-          scale: [1, 1.055],
-          duration: 1800,
-          direction: "alternate",
-          easing: "easeInOutSine",
-          loop: true,
-        });
 
         anime({
           targets: ".meet-button",

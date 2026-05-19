@@ -6,7 +6,7 @@
   --paper: rgba(255, 255, 255, 0.78);
   --line: rgba(185, 131, 34, 0.34);
   --shadow: 0 28px 90px rgba(7, 42, 88, 0.2);
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Libre Baskerville", "Playfair Display", Georgia, "Times New Roman", serif;
   --font-accent: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Montserrat", Arial, Helvetica, sans-serif;
 }
@@ -83,7 +83,7 @@ body {
   position: relative;
   z-index: 3;
   width: min(100%, 590px);
-  padding: clamp(22px, 4vw, 44px);
+  padding: clamp(24px, 4vw, 46px);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 24px;
   background: var(--paper);
@@ -103,70 +103,42 @@ body {
 
 .eyebrow {
   margin: 0;
-  color: var(--gold);
+  color: #b87912;
   font-family: var(--font-body);
-  font-size: 0.74rem;
+  font-size: clamp(0.72rem, 1.15vw, 0.82rem);
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.34em;
+  line-height: 1.25;
   text-align: center;
   text-transform: uppercase;
 }
 
-.cross {
-  position: relative;
-  width: 52px;
-  height: 68px;
-  margin: 14px auto 8px;
-}
-
-.cross::before,
-.cross::after {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 999px;
-  background: linear-gradient(#d59b31, #a76f14);
-  content: "";
-  transform: translate(-50%, -50%);
-}
-
-.cross::before {
-  width: 9px;
-  height: 68px;
-}
-
-.cross::after {
-  width: 52px;
-  height: 8px;
-  top: 35%;
-}
-
 h1 {
-  margin: 0;
-  color: var(--ink);
+  margin: 34px 0 0;
+  color: #0b3678;
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 7vw, 6.8rem);
-  font-weight: 800;
-  line-height: 0.88;
+  font-size: clamp(3.15rem, 6vw, 5.7rem);
+  font-weight: 700;
+  line-height: 0.78;
   letter-spacing: 0;
   text-align: center;
 }
 
 h1 span {
   display: block;
-  color: var(--blue);
-  font-size: clamp(2.55rem, 5.6vw, 5.2rem);
+  color: #0d63c4;
+  font-size: clamp(2.1rem, 4.5vw, 4.15rem);
   font-weight: 700;
 }
 
 .message {
-  max-width: 470px;
-  margin: 22px auto 0;
-  color: #173c69;
+  max-width: 500px;
+  margin: 20px auto 0;
+  color: #153d78;
   font-family: var(--font-body);
-  font-size: clamp(0.98rem, 1.55vw, 1.1rem);
-  font-weight: 500;
-  line-height: 1.68;
+  font-size: clamp(1rem, 1.65vw, 1.13rem);
+  font-weight: 600;
+  line-height: 1.56;
   text-align: center;
 }
 
@@ -584,34 +556,19 @@ h1 span {
     border-radius: 15px;
   }
 
-  .cross {
-    width: 42px;
-    height: 52px;
-    margin-top: 10px;
-  }
-
-  .cross::before {
-    width: 7px;
-    height: 52px;
-  }
-
-  .cross::after {
-    width: 42px;
-    height: 7px;
-  }
-
   h1 {
-    font-size: clamp(2.75rem, 13vw, 4.55rem);
+    margin-top: 30px;
+    font-size: clamp(2.65rem, 12vw, 4.1rem);
   }
 
   h1 span {
-    font-size: clamp(2.1rem, 10vw, 3.65rem);
+    font-size: clamp(1.8rem, 8.8vw, 3rem);
   }
 
   .message {
-    margin-top: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
+    margin-top: 14px;
+    font-size: 1.02rem;
+    line-height: 1.52;
   }
 
   .event-box {
@@ -661,7 +618,8 @@ h1 span {
   }
 
   .eyebrow {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
   }
 }
 
