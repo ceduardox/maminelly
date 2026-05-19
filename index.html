@@ -37,6 +37,10 @@
     <link rel="preload" href="maminelly.webp" as="image">
     <link rel="preload" href="manos.webp" as="image">
     <link rel="stylesheet" href="styles.css">
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+    ></script>
   </head>
   <body>
     <main class="page-shell">
@@ -148,6 +152,77 @@
         if (event.target === modal) {
           modal.close();
         }
+      });
+
+      window.addEventListener("load", () => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!window.anime || reduceMotion) {
+          return;
+        }
+
+        anime.set(".portrait-wrap, .card, .event-box > div, .meet-button, .hosts li", {
+          opacity: 0,
+        });
+
+        anime.timeline({
+          easing: "easeOutExpo",
+        })
+          .add({
+            targets: ".portrait-wrap",
+            opacity: [0, 1],
+            translateY: [24, 0],
+            scale: [0.96, 1],
+            duration: 950,
+          })
+          .add({
+            targets: ".card",
+            opacity: [0, 1],
+            translateY: [24, 0],
+            duration: 800,
+          }, "-=620")
+          .add({
+            targets: ".event-box > div",
+            opacity: [0, 1],
+            translateY: [18, 0],
+            delay: anime.stagger(90),
+            duration: 650,
+          }, "-=430")
+          .add({
+            targets: ".meet-button",
+            opacity: [0, 1],
+            translateY: [16, 0],
+            scale: [0.96, 1],
+            duration: 620,
+          }, "-=360")
+          .add({
+            targets: ".hosts li",
+            opacity: [0, 1],
+            translateX: [-12, 0],
+            delay: anime.stagger(55),
+            duration: 520,
+          }, "-=250");
+
+        anime({
+          targets: ".cross",
+          scale: [1, 1.055],
+          duration: 1800,
+          direction: "alternate",
+          easing: "easeInOutSine",
+          loop: true,
+        });
+
+        anime({
+          targets: ".meet-button",
+          boxShadow: [
+            "0 18px 42px rgba(11, 92, 168, 0.28)",
+            "0 22px 54px rgba(22, 134, 78, 0.34)",
+          ],
+          duration: 1900,
+          direction: "alternate",
+          easing: "easeInOutSine",
+          loop: true,
+        });
       });
     </script>
   </body>
