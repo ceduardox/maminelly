@@ -62,14 +62,13 @@
             </div>
           </div>
 
-          <a
+          <button
             class="meet-button"
-            href="https://meet.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            type="button"
+            data-open-modal
           >
             Entrar a la novena
-          </a>
+          </button>
 
           <section class="hosts" aria-label="Invitan sus hijos">
             <h2>Invitan sus hijos</h2>
@@ -93,5 +92,44 @@
         >
       </section>
     </main>
+
+    <dialog class="notice-modal" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar aviso">
+          ×
+        </button>
+        <p class="modal-eyebrow">Aviso importante</p>
+        <h2 id="modal-title">El enlace estará habilitado a las 20:00 hrs</h2>
+        <p>
+          El link para ingresar a la novena por Google Meet será activado a la
+          hora indicada. Agradecemos su comprensión.
+        </p>
+        <button class="modal-action" type="button" data-close-modal>
+          Entendido
+        </button>
+      </div>
+    </dialog>
+
+    <script>
+      const modal = document.querySelector(".notice-modal");
+      const openModal = document.querySelector("[data-open-modal]");
+      const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+      openModal.addEventListener("click", () => {
+        modal.showModal();
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          modal.close();
+        });
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.close();
+        }
+      });
+    </script>
   </body>
 </html>
